@@ -10,7 +10,8 @@ const input = document.querySelector('input[type="number"]');
 
   createBtn.addEventListener('click', () => {
       const amount = parseInt(input.value);
-      if (amount >= 1 && amount <= 100) {
+    if (amount >= 1 && amount <= 100) {
+        destroyBoxes();
         createBoxes(amount);
         input.value = '';
       } else {
@@ -21,6 +22,7 @@ const input = document.querySelector('input[type="number"]');
 destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
+
   for (let i = 0; i < amount; i++) {
     const size = 30 + i * 10;
     const div = document.createElement('div');
